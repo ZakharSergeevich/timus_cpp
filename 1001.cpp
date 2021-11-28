@@ -10,17 +10,15 @@
 int main()
 {
     long long num = 0;
-    std::vector<long long> arrayNum;
+    std::vector<long long> arrayNums;
 
     while (std::cin >> num)
-    {
-        arrayNum.push_back(num);
-    }
+        arrayNums.push_back(num);
 
-    int sizeArray = arrayNum.size();
+    int sizeArray = arrayNums.size();
     for (int i = 0; i < sizeArray; i++)
     {
-        double sqNum = sqrt(arrayNum[sizeArray - i - 1]);
+        double sqNum = sqrt(arrayNums[sizeArray - i - 1]);
         std::cout << std::fixed << std::setprecision(4);
         std::cout << sqNum << std::endl;
     }
