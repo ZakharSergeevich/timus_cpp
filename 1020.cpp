@@ -41,15 +41,10 @@ int main()
     circumference = 2 * getPi() * radius;
 
     float pointPerimeter = 0;
-    for (int nail = 0; nail < nailsNum; nail++)
+    for (int nail = 1; nail < nailsNum; nail++)
     {
-        int pointFrom = nail;
-    
-        int pointTo = 0;
-        if (nail == (nailsNum - 1))
-            pointTo = 0;
-        else
-            pointTo = nail + 1;
+        int pointFrom = nail - 1;
+        int pointTo = nail;
         
         float line = 0;
         float deltaX = area[pointTo].x - area[pointFrom].x;
@@ -60,6 +55,13 @@ int main()
         pointPerimeter = pointPerimeter + line;
     }
     
+    float dLine = 0;
+    float deltaX = area[nailsNum - 1].x - area[0].x;
+    float deltaY = area[nailsNum - 1].y - area[0].y;
+    dLine = sqrtf(powf(deltaX, 2) + powf(deltaY, 2));
+
+    pointPerimeter = pointPerimeter + dLine;
+
     float totalPerimeter = circumference + pointPerimeter;
     std::cout << std::fixed << std::setprecision(2);
     std::cout << totalPerimeter;
