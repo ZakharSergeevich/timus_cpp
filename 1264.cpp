@@ -6,15 +6,14 @@
 
 int main()
 {
-    int N = 0;
-    int M = 0;
+    int arraySize = 0;
+    int numFromZero = 0;
 
-    std::cin >> N;
-    std::cin >> M;
+    std::cin >> arraySize;
+    std::cin >> numFromZero;
 
-    int numSeconds = 0;
-
-    numSeconds = N * (M + 1);
+    int amountOfNum = numFromZero + 1;
+    int numSeconds = arraySize * amountOfNum;
 
     std::cout << numSeconds;
 
