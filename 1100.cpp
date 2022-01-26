@@ -34,32 +34,22 @@ int main()
     std::vector <Pair> commandsNumSorted;
     commandsNumSorted = commandsNum;
 
-    // -- sort
 
     Pair buff;
 
     for (int i = 0; i < dataNums; i++)
         for (int j = dataNums - 1; j > i; j--)
         {
-            if (commandsNumSorted[j - 1].m > commandsNumSorted[j].m)
+            if (commandsNumSorted[j - 1].m < commandsNumSorted[j].m)
             {
                 buff = commandsNumSorted[j - 1];
                 commandsNumSorted[j - 1] = commandsNumSorted[j];
                 commandsNumSorted[j] = buff;
-            }
-            //if (commandsNumSorted[j - 1].m == commandsNumSorted[j].m)
-            //{
-            //    if (commandsNumSorted[j - 1].id > commandsNumSorted[j].id)
-            //    {
-            //        buff = commandsNumSorted[j - 1];
-            //        commandsNumSorted[j - 1] = commandsNumSorted[j];
-            //        commandsNumSorted[j] = buff;
-            //    }
-            //}
+            }          
         }
 
 
-    for (int i = dataNums - 1; i >= 0; i--)
+    for (int i = 0; i < dataNums; i++)
         std::cout << commandsNumSorted[i].id << ' ' << commandsNumSorted[i].m << std::endl;
 
     return 0;
